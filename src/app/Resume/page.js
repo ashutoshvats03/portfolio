@@ -5,7 +5,7 @@ const educationData = [
   {
     institution: 'Heritage College Of Art',
     period: '2022 - 2026',
-    description: '7.1 CGPA',
+    description: '7.3 CGPA',
   },
   {
     institution: 'New York Academy Of Art',
@@ -35,7 +35,7 @@ const skillsData = [
 
 export default function Home() {
   return (
-    <div className="bg-zinc-800 text-gray-300 p-8 rounded-md shadow-lg">
+    <div className=" text-gray-300 p-8 rounded-md shadow-lg">
       {/* Education Section */}
       <h1 className='text-4xl font-bold'>
         Resume

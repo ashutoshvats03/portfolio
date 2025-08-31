@@ -1,53 +1,116 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
+import TechCarousel from '../components/Carousel';
+import { InfoIcon } from 'lucide-react';
 
 function About() {
+    const [info, setInfo] = useState(false);
+    const languages = [
+        { "name": "JavaScript", "link": "js.png" },
+        { "name": "Python", "link": "python.png" },
+        { "name": "Java", "link": "java.png" },
+    ];
+    const frontend = [
+        { "name": "HTML", "link": "html.png" },
+        { "name": "CSS", "link": "css.png" },
+        { "name": "TailwindCSS", "link": "tailwind.jpeg" },
+        { "name": "React", "link": "react.png" },
+        { "name": "Redux", "link": "redux.png" },
+        { "name": "Next.js", "link": "nextjs.jpeg" },
+    ];
+    const backend = [
+        { "name": "Node.js", "link": "nodejs.png" },
+        { "name": "Express.js", "link": "expressjs.png" },
+        { "name": "Django", "link": "django.png" },
+    ];
+    const database = [
+        { "name": "MongoDB", "link": "mongoDB.png" },
+        { "name": "PostgreSQL", "link": "postgre.png" },
+    ];
+    const devops = [
+        { "name": "AWS", "link": "aws.png" },
+        { "name": "Docker", "link": "docker.png" },
+    ]
     const techStack = [
-        "JavaScript", "Nodejs", "Expressjs", "Tailwindcss",
-        "React", "Redux", "Nextjs", "MongoDB", "PostgreSql",
-        "Python", "Django", "AWS", "Docker",
+        ...languages,
+        ...frontend,
+        ...backend,
+        ...database,
+        ...devops
+    ];
+    const bio = [
+        "I'm Ashutosh Vats, a developer with a strong focus on backend technologies. I leverage my problem-solving skills and logical thinking to create scalable, efficient, and cost-effective solutions for organizations. I am passionate about robust automation and deployment, always seeking to optimize processes for desirable results. My knowledge of system design guides me in selecting the right tools and technologies, which I then implement using my tech stack—and I'm always eager to learn new ones when needed.",
     ];
 
-    const summaryText = (
-        <>
-            <p>
-                <b className="text-xl"> My Story ✨</b>
-                I&apos;m Ashutosh Vats, a passionate developer who believes engineering is all about learning and solving real-world problems. I get a thrill from building solutions that make a real impact, and my work is a testament to that passion. With an unquenchable curiosity for new technologies and a drive to innovate, I&apos;m always searching for opportunities to experiment and contribute to projects that truly matter. 🚀
-            </p>
-            <br />
-            <p>
-                <b className="text-xl">My Journey 🗺️</b>
-                My journey began with a hands-on Software Developer Internship at Spatialty.ai, where I took the lead in creating a web application prototype and an admin dashboard using Next.js and Django. My work wasn&apos;t just about code—it was about solving complex challenges. I implemented secure JWT authentication and integrated Leaflet maps and Chart.js for visualization and analytics. I even used Redis caching to boost system efficiency by a staggering 99%. Beyond this, I&apos;ve built personal projects like a real-time chat app and a news-scraping tool, showcasing my proficiency with technologies like Next.js, Express.js, Docker, and AWS.
-            </p>
-            <br />
-            <p>
-                <b className="text-xl">My Foundations 🛠️</b>
-                I&apos;m grounded in a strong skill set that allows me to bring ideas to life. From my foundation in languages like C, Java, and Python to my experience with frameworks like React and Django, I&apos;m equipped to handle a wide range of projects. My toolkit includes everything from JWT and Redis to Docker and AWS, ensuring I&apos;m prepared for modern development challenges. This blend of technical skills and a passion for problem-solving is what defines me as a developer
-            </p>
-        </>
-    );
-
-
     return (
-        <div className="flex w-full p-4 md:p-8 sm:p-4 flex-col gap-7">
-            <h1 className='text-4xl font-bold'>
+        <div className="container mx-auto p-4 md:p-8 sm:p-4">
+            <h1 className='text-4xl font-bold mb-2'>
                 About Me
-                <div className="my-4 border-3 border-amber-300 w-16 rounded-full"></div>
+                <div className="my-2 border-b-4  w-16"></div>
             </h1>
-            <div className="summary md:text-sm sm:text-xs">
-                {summaryText}
-            </div>
-            <div className="doing text-3xl font-bold">
-                Framework and Tech that I Know
-            </div>
-            <div className="techs flex flex-wrap gap-3">
-                {techStack.map((tech, index) => (
-                    <div
-                        key={index}
-                        className="tech border-2 border-white rounded-full px-4 py-2 mt-3 text-lg font-semibold"
-                    >
-                        {tech}
-                    </div>
+            <div className="summary mt-5 leading-relaxed space-y-4">
+                {bio.map((paragraph, index) => (
+                    <p key={index} className=' text-gray-400'>{paragraph}</p>
                 ))}
+            </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6 flex gap-5 items-center">
+                <div>Frameworks and Technologies I Know</div>
+                <InfoIcon
+                    onClick={() => setInfo(!info)}
+                    size={25}
+                />
+            </h2>
+            {/* <TechCarousel techStack={frontend} />
+                <TechCarousel techStack={backend} />
+                <TechCarousel techStack={database} />
+                <TechCarousel techStack={devops} />
+                <TechCarousel techStack={languages} /> */}
+            <div className="relative">
+                {!info && <TechCarousel techStack={techStack} />}
+                <div className={`absolute top-0  px-3 py-2 flex flex-col gap-1 ${info ? 'block' : 'hidden'}`}>
+                    <div className='flex gap-2 font-bold items-center'>
+                        <div className='text-sm'>Languages :</div>
+                        {languages.map((item, index) => (
+                            <div key={index} className='text-sm text-gray-500'>
+                                <p>{item.name}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className='flex gap-2 font-bold items-center'>
+                        <div className='text-sm'>Frontend :</div>
+                        {frontend.map((item, index) => (
+                            <div key={index} className='text-sm text-gray-500'>
+                                <p>{item.name} </p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className='flex gap-2 font-bold items-center'>
+                        <div className='text-sm'>Backend :</div>
+                        {backend.map((item, index) => (
+                            <div key={index} className='text-sm text-gray-500'>
+                                <p>{item.name}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className='flex gap-2 font-bold items-center'>
+                        <div className='text-sm'>Database :</div>
+                        {database.map((item, index) => (
+                            <div key={index} className='text-sm text-gray-500'>
+                                <p>{item.name}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className='flex gap-2 font-bold items-center'>
+                        <div className='text-sm'>DevOps :</div>
+                        {devops.map((item, index) => (
+                            <div key={index} className='text-sm text-gray-500'>
+                                <p>{item.name}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
             </div>
         </div>
     );

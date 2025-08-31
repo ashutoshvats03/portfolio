@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <>
       <div className='upper  flex flex-col gap-7 justify-center items-center'>
         <Image
-          src="/emote1.png"
+          src="emote1.png"
           width={150}
           height={150}
           alt="Profile photo"
@@ -78,7 +78,12 @@ export default function RootLayout({ children }) {
         <div className='navbar  w-fit fixed top-0 right-0 z-10 backdrop-blur-3xl bg-black md:border-b-1 md:border-l-1 sm:border-0 rounded-bl-3xl mt-16 px-3 py-4 md:mr-20 md:py-4 md:px-3'>
           <div className="links flex flex-wrap gap-2 text-sm font-semibold sm:text-lg md:gap-6 md:text-2xl">
             <Link href="/About">About</Link>
-            {/* <Link href="/Blog">Blog</Link> */}
+            <Link
+              target="_blank"
+              href="https://ashutoshvats2109.wixsite.com/my-site-1"
+            >
+              Blog
+            </Link>
             <Link href="/Portfolio">Portfolio</Link>
             <Link href="/Resume">Resume</Link>
           </div>
