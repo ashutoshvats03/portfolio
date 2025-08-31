@@ -30,7 +30,7 @@ import React from 'react'
 
 function Page() {
   const router = useRouter()
-  router.push('/About')
+  // router.push('/About')
   return (
     <div>
       

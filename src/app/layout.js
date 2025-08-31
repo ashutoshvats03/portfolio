@@ -6,12 +6,13 @@ import "./globals.css";
 import { Poppins } from 'next/font/google';
 import { Calendar, Mail, MapPin, PhoneCall } from 'lucide-react';
 import QuickMenu from './components/QuickMenu';
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
 const x = Poppins({ subsets: ['latin'], weight: '400' });
 
 export default function RootLayout({ children }) {
-  redirect('/About');
+  const router = useRouter();
+  router.push('/About');
   const leftSectionContent = (
     <>
       <div className='upper  flex flex-col gap-7 justify-center items-center'>
