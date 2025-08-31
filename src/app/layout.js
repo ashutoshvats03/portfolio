@@ -7,7 +7,7 @@ import "./globals.css";
 import { Poppins } from 'next/font/google';
 import { Calendar, Mail, MapPin, PhoneCall } from 'lucide-react';
 import QuickMenu from './components/QuickMenu';
-import { redirect, useRouter } from 'next/navigation';
+import { redirect, useRouter,useEffect } from 'next/navigation';
 
 const x = Poppins({ subsets: ['latin'], weight: '400' });
 
