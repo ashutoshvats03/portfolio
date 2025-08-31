@@ -13,7 +13,9 @@ const x = Poppins({ subsets: ['latin'], weight: '400' });
 
 export default function RootLayout({ children }) {
   const router = useRouter();
-  router.push('/About');
+  useEffect(() => {
+    router.push('/About');
+  }, [])
   const leftSectionContent = (
     <>
       <div className='upper  flex flex-col gap-7 justify-center items-center'>
