@@ -27,7 +27,7 @@ function TechCarousel({ techStack }) {
   const duplicatedTechStack = [...techStack, ...techStack , ...techStack , ...techStack , ...techStack];
 
   return (
-    <div className="relative ">
+    <div className="relative w-[1000px] overflow-hidden no-scrollbar">
       <motion.div
         className="flex"
         variants={carouselVariants}

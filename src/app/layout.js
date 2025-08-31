@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <>
       <div className='upper  flex flex-col gap-7 justify-center items-center'>
         <Image
-          src="emote1.png"
+          src="emote-removebg-preview.png"
           width={150}
           height={150}
           alt="Profile photo"

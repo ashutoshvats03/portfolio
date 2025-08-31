@@ -66,45 +66,45 @@ function About() {
                 <TechCarousel techStack={database} />
                 <TechCarousel techStack={devops} />
                 <TechCarousel techStack={languages} /> */}
-            <div className="relative">
+            <div className="relative ">
                 {!info && <TechCarousel techStack={techStack} />}
                 <div className={`absolute top-0  px-3 py-2 flex flex-col gap-1 ${info ? 'block' : 'hidden'}`}>
                     <div className='flex gap-2 font-bold items-center'>
-                        <div className='text-sm'>Languages :</div>
+                        <div className=''>Languages :</div>
                         {languages.map((item, index) => (
-                            <div key={index} className='text-sm text-gray-500'>
+                            <div key={index} className=' text-gray-500'>
                                 <p>{item.name}</p>
                             </div>
                         ))}
                     </div>
                     <div className='flex gap-2 font-bold items-center'>
-                        <div className='text-sm'>Frontend :</div>
+                        <div className=''>Frontend :</div>
                         {frontend.map((item, index) => (
-                            <div key={index} className='text-sm text-gray-500'>
+                            <div key={index} className=' text-gray-500'>
                                 <p>{item.name} </p>
                             </div>
                         ))}
                     </div>
                     <div className='flex gap-2 font-bold items-center'>
-                        <div className='text-sm'>Backend :</div>
+                        <div className=''>Backend :</div>
                         {backend.map((item, index) => (
-                            <div key={index} className='text-sm text-gray-500'>
+                            <div key={index} className=' text-gray-500'>
                                 <p>{item.name}</p>
                             </div>
                         ))}
                     </div>
                     <div className='flex gap-2 font-bold items-center'>
-                        <div className='text-sm'>Database :</div>
+                        <div className=''>Database :</div>
                         {database.map((item, index) => (
-                            <div key={index} className='text-sm text-gray-500'>
+                            <div key={index} className=' text-gray-500'>
                                 <p>{item.name}</p>
                             </div>
                         ))}
                     </div>
                     <div className='flex gap-2 font-bold items-center'>
-                        <div className='text-sm'>DevOps :</div>
+                        <div className=''>DevOps :</div>
                         {devops.map((item, index) => (
-                            <div key={index} className='text-sm text-gray-500'>
+                            <div key={index} className=' text-gray-500'>
                                 <p>{item.name}</p>
                             </div>
                         ))}
