@@ -1,13 +1,13 @@
 // src/app/layout.js
 "use client"
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import "./globals.css";
 import { Poppins } from 'next/font/google';
 import { Calendar, Mail, MapPin, PhoneCall } from 'lucide-react';
 import QuickMenu from './components/QuickMenu';
-import { redirect, useRouter,useEffect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
 const x = Poppins({ subsets: ['latin'], weight: '400' });
 
