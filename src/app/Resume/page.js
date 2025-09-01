@@ -3,17 +3,17 @@ import React from 'react';
 // Sample data for the sections
 const educationData = [
   {
-    institution: 'Heritage College Of Art',
+    institution: 'Heritage Institute of Technology',
     period: '2022 - 2026',
     description: '7.3 CGPA',
   },
   {
-    institution: 'New York Academy Of Art',
+    institution: 'Collegiate High School',
     period: '2020 - 2022',
     description: '81.6 %',
   },
   {
-    institution: 'High School Of Art And Design',
+    institution: 'Holy Cross International School',
     period: '2008 – 2020',
     description: '79 %',
   },
