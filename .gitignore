@@ -1,6 +1,4 @@
-node_modules/
-.next/
-.env*
+node_modules/ 
+.next/ 
+.env* 
 *.log
-"<rfl:parameter name="path">
-C:\Users\ashutosh vats\portfolio-kinetic\.gitignore
